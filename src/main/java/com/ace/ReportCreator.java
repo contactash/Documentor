@@ -18,7 +18,7 @@ public class ReportCreator {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/college", "ash", "password");
 
             HashMap<String, Object> jasperParameter = new HashMap<String, Object>();
-            jasperParameter.put("QUERY", "select * from students;");
+            jasperParameter.put("QUERY", "select * from students");
             InputStream inputStream = ReportClient.class.getResourceAsStream("/school.xml");
             JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,jasperParameter, conn);

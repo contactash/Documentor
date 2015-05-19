@@ -21,12 +21,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="MyReports" />
+        <module name="Demo" />
+        <module name="DocApp" />
         <module name="PdfCreator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="MyReports" target="1.5" />
+      <module name="Demo" target="1.5" />
+      <module name="DocApp" target="1.5" />
       <module name="PdfCreator" target="1.5" />
     </bytecodeTargetLevel>
   </component>
