@@ -6,10 +6,11 @@ import java.io.IOException;
 
 public class ReportClient {
 	
-	public static void main(String[] args) throws IOException {
-		ReportCreator report = new ReportCreator();
-		String fileName = report.createPDFReport();
-        FileUtils.openFile(fileName);
+	public static void main(String args[]) {
+		ReportCreator reportCreator = new ReportCreator();
+		String fileName = reportCreator.createPDFReport();
+		FileUtils.openFile(fileName);
 	}
+
 
 }

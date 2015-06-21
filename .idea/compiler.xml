@@ -22,7 +22,6 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="Demo" />
-        <module name="DocApp" />
         <module name="PdfCreator" />
       </profile>
     </annotationProcessing>
