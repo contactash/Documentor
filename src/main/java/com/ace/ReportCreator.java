@@ -1,23 +1,19 @@
 package com.ace;
 
+import com.ace.utils.ConnectionGenerator;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.export.JRXlsExporterParameter;
 import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
 
 import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.HashMap;
 
 public class ReportCreator {
 
-    public String createPDFReport() {
+    public String createReport(String reportType) {
 
         try {
-            Class.forName(Constants.DB_DRIVER);
-            Connection conn = DriverManager.getConnection(Constants.DB_URL, Constants.USER, Constants.PASSWORD);
-
-
             InputStream inputStream = getClass().getResourceAsStream(Constants.REPORT_XML);
             JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
 
@@ -26,8 +22,10 @@ public class ReportCreator {
             jasperParameter.put(Constants.REPORT_NAME, Constants.REPORT_NAME_VALUE);
 
 
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,jasperParameter, conn);
-            JasperExportManager.exportReportToPdfFile(jasperPrint, Constants.FILE_NAME + Constants.PDF_EXT);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,
+                    jasperParameter, ConnectionGenerator.getConnection());
+
+            JasperExportManager.exportReportToPdfFile(jasperPrint, Constants.FILE_NAME + reportType);
 
             JRXlsxExporter exporter = new JRXlsxExporter();
             exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
@@ -45,7 +43,7 @@ public class ReportCreator {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return Constants.FILE_NAME + Constants.PDF_EXT;
+        return Constants.FILE_NAME + reportType;
 
     }
 
