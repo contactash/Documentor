@@ -1,5 +1,7 @@
 package com.ace.utils;
 
+import com.ace.constants.FileUtilsConstants;
+
 import java.awt.*;
 import java.io.File;
 
@@ -11,20 +13,20 @@ public class FileUtils {
             System.out.println(file);
             if ((new File(file)).exists()) {
 
-                if(OSDetector.isWindows()) {
-                    Process p = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler "+ file);
+                if(OSDetectionUtils.isWindows()) {
+                    Process p = Runtime.getRuntime().exec(FileUtilsConstants.RUN_DLL + file);
                     p.waitFor();
-                } else if (OSDetector.isLinux() || OSDetector.isMac()) {
-                    Process p = Runtime.getRuntime().exec(new String[]{"/usr/bin/open",
+                } else if (OSDetectionUtils.isLinux() || OSDetectionUtils.isMac()) {
+                    Process p = Runtime.getRuntime().exec(new String[]{FileUtilsConstants.OPEN_COMMAND,
                             file});
                     p.waitFor();
                 }  else if (Desktop.isDesktopSupported()) {
                     Desktop.getDesktop().open(new File(file));
                 }
             } else {
-                System.out.println("File does not exists");
+                System.out.println(FileUtilsConstants.FILE_DOES_NOT_EXISTS);
             }
-            System.out.println("Done");
+            System.out.println(FileUtilsConstants.DONE);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

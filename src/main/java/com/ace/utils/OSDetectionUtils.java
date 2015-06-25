@@ -1,6 +1,6 @@
 package com.ace.utils;
 
-public class OSDetector
+public class OSDetectionUtils
 {
     private static boolean isWindows = false;
     private static boolean isLinux = false;

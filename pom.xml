@@ -15,7 +15,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.ace.ReportClient</mainClass>
+                            <mainClass>com.ace.client.ReportClient</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

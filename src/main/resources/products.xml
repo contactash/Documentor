@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report6" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3dc3c19-f3e7-4f1b-adae-78ef999b9398">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report6" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3dc3c19-f3e7-4f1b-adae-78ef999b9398">
     <property name="ireport.zoom" value="1.0"/>
     <property name="ireport.x" value="0"/>
     <property name="ireport.y" value="0"/>
@@ -48,8 +48,9 @@
         </conditionalStyle>
     </style>
     <subDataset name="New Dataset 1" uuid="58285408-658e-489a-8812-749670747e16">
+        <parameter name="parameter1" class="java.lang.String"/>
         <queryString>
-            <![CDATA[select productCode, productName, productLine, productScale, productVendor from products]]>
+            <![CDATA[$P!{parameter1}]]>
         </queryString>
         <field name="productCode" class="java.lang.String">
             <fieldDescription><![CDATA[]]></fieldDescription>
@@ -71,6 +72,7 @@
         </group>
     </subDataset>
     <parameter name="REPORT_NAME" class="java.lang.String"/>
+    <parameter name="QUERY" class="java.lang.String"/>
     <queryString>
         <![CDATA[select 1 from dual]]>
     </queryString>
@@ -97,7 +99,10 @@
             <componentElement>
                 <reportElement key="table 1" style="table 1" x="0" y="0" width="555" height="125" uuid="b74fe7be-f7d0-46c3-8fff-66d9b0416604"/>
                 <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-                    <datasetRun subDataset="New Dataset 1" uuid="e980996a-b2c5-4e3e-8d1c-b8ddd2d92bb1">
+                    <datasetRun subDataset="New Dataset 1" uuid="6b0bdf7e-d4a4-4b0e-b752-537335d4c5ab">
+                        <datasetParameter name="parameter1">
+                            <datasetParameterExpression><![CDATA[$P{QUERY}]]></datasetParameterExpression>
+                        </datasetParameter>
                         <connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
                     </datasetRun>
                     <jr:column width="90" uuid="da5b93d6-12cc-424f-9cad-3376b7eb4226">
