@@ -11,7 +11,7 @@ public class PDFGenerator extends ReportGenerator {
     public String generateReport(JasperPrint jasperPrint) throws JRException {
 
         String fileName = ReportConstants.FILE_NAME + ReportConstants.PDF_EXT;
-        JRPdfExporter exporter = (JRPdfExporter) getJrExporter(jasperPrint, fileName, new JRPdfExporter() );
+        JRPdfExporter exporter = (JRPdfExporter) getExporter(jasperPrint, fileName, new JRPdfExporter());
         exporter.exportReport();
         return fileName;
 
