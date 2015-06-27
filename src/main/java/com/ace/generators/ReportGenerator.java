@@ -14,4 +14,5 @@ public abstract class ReportGenerator {
 
         return exporter;
     }
+
 }

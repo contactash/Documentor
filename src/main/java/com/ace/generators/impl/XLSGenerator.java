@@ -10,7 +10,7 @@ import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
 public class XLSGenerator extends ReportGenerator {
 
     public String generateReport(JasperPrint jasperPrint) throws JRException {
-        String fileName = ReportConstants.FILE_NAME + ReportConstants.XLS_EXT;
+        String fileName = getFileName();
         JRXlsxExporter exporter = (JRXlsxExporter) getExporter(jasperPrint, fileName, new JRXlsxExporter());
 
         exporter.setParameter(JRXlsExporterParameter.IS_COLLAPSE_ROW_SPAN, Boolean.TRUE);
@@ -23,5 +23,9 @@ public class XLSGenerator extends ReportGenerator {
 
         exporter.exportReport();
         return fileName;
+    }
+
+    String getFileName() {
+        return ReportConstants.FILE_NAME + ReportConstants.XLS_EXT;
     }
 }

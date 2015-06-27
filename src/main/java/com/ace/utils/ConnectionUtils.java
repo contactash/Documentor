@@ -11,7 +11,6 @@ public class ConnectionUtils {
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
 
         Class.forName(DBConstants.DB_DRIVER);
-
         return DriverManager.getConnection(DBConstants.DB_URL, DBConstants.USER, DBConstants.PASSWORD);
 
     }
