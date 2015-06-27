@@ -22,6 +22,4 @@ public class ReportClient {
         String fileName = reportBuilder.createReport();
         FileUtils.openFile(fileName);
     }
-
-
 }

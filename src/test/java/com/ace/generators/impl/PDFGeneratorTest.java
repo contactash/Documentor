@@ -1,7 +1,5 @@
 package com.ace.generators.impl;
 
-import com.ace.generators.ReportGenerator;
-import net.sf.jasperreports.engine.JasperPrint;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
