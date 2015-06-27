@@ -9,13 +9,15 @@ import net.sf.jasperreports.engine.export.JRHtmlExporter;
 public class HTMLGenerator extends ReportGenerator {
     public String generateReport(JasperPrint jasperPrint) throws JRException {
 
-        String fileName = getPDFFileName();
+        String fileName = getFileName();
         JRHtmlExporter exporter = (JRHtmlExporter) getExporter(jasperPrint, fileName, new JRHtmlExporter());
         exporter.exportReport();
         return fileName;
     }
 
-    String getPDFFileName() {
-        return ReportConstants.FILE_NAME + ReportConstants.HTML_EXT;
+    @Override
+    public String getFileName() {
+        return  super.getFileName() + ReportConstants.HTML_EXT;
     }
+
 }

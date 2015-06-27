@@ -8,6 +8,7 @@ import net.sf.jasperreports.engine.export.JRPdfExporter;
 
 public class PDFGenerator extends ReportGenerator {
 
+
     public String generateReport(JasperPrint jasperPrint) throws JRException {
 
         String fileName = getFileName();
@@ -16,8 +17,9 @@ public class PDFGenerator extends ReportGenerator {
         return fileName;
     }
 
-    String getFileName() {
-        return ReportConstants.FILE_NAME + ReportConstants.PDF_EXT;
+    @Override
+    public String getFileName() {
+        return  super.getFileName() + ReportConstants.PDF_EXT;
     }
 
 }

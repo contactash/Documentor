@@ -25,7 +25,8 @@ public class XLSGenerator extends ReportGenerator {
         return fileName;
     }
 
-    String getFileName() {
-        return ReportConstants.FILE_NAME + ReportConstants.XLS_EXT;
+    @Override
+    public String getFileName() {
+        return  super.getFileName() + ReportConstants.XLS_EXT;
     }
 }

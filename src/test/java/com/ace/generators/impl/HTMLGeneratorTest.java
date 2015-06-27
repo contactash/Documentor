@@ -14,7 +14,7 @@ public class HTMLGeneratorTest {
     public void testFileNameIsWithHTMLExtension() throws Exception {
 
         HTMLGenerator generator = new HTMLGenerator();
-        String actualFileName = generator.getPDFFileName();
+        String actualFileName = generator.getFileName();
         String expectedFileName = ReportConstants.FILE_NAME + ReportConstants.HTML_EXT;
         assertThat(actualFileName, is(equalTo(expectedFileName)));
     }
