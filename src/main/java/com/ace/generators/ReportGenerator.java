@@ -1,6 +1,6 @@
 package com.ace.generators;
 
-import com.ace.constants.ReportConstants;
+import com.ace.constants.ProductReportConstants;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRExporter;
 import net.sf.jasperreports.engine.JRExporterParameter;
@@ -19,7 +19,7 @@ public abstract class ReportGenerator {
     }
 
      public  String getFileName() {
-        return  ReportConstants.FILE_NAME;
+        return  ProductReportConstants.FILE_NAME;
     }
 
 }

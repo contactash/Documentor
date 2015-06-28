@@ -1,7 +1,7 @@
 package com.ace.creator;
 
-import com.ace.constants.ReportConstants;
 import com.ace.constants.DBConstants;
+import com.ace.constants.ProductReportConstants;
 import com.ace.generators.ReportGenerator;
 import com.ace.utils.ConnectionUtils;
 import net.sf.jasperreports.engine.*;
@@ -46,13 +46,13 @@ public class ReportBuilder {
     }
 
     private InputStream getReportTemplate() {
-        return getClass().getResourceAsStream(ReportConstants.REPORT_XML);
+        return getClass().getResourceAsStream(ProductReportConstants.REPORT_XML);
     }
 
     private HashMap<String, Object> setReportParameters() {
         HashMap<String, Object> jasperParameter = new HashMap<String, Object>();
-        jasperParameter.put(DBConstants.QUERY, DBConstants.QUERY_VALUE);
-        jasperParameter.put(ReportConstants.REPORT_NAME, ReportConstants.REPORT_NAME_VALUE);
+        jasperParameter.put(DBConstants.QUERY, ProductReportConstants.QUERY_VALUE);
+        jasperParameter.put(ProductReportConstants.REPORT_NAME, ProductReportConstants.REPORT_NAME_VALUE);
         return jasperParameter;
     }
 
