@@ -3,6 +3,7 @@ package com.ace.creator;
 import com.ace.constants.DBConstants;
 import com.ace.constants.ProductReportConstants;
 import com.ace.generators.ReportGenerator;
+import com.ace.template.impl.ProductTemplate;
 import com.ace.utils.ConnectionUtils;
 import net.sf.jasperreports.engine.*;
 
