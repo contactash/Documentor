@@ -12,6 +12,7 @@ import java.util.HashMap;
 
 public class ReportBuilder {
 
+    private final ProductTemplate productTemplate = new ProductTemplate();
     ReportGenerator reportGenerator;
 
     public void setReportGenerator(ReportGenerator reportGenerator) {
@@ -23,7 +24,7 @@ public class ReportBuilder {
         String fileName = "";
 
         try {
-            InputStream inputStream = getReportTemplate();
+            InputStream inputStream = productTemplate.getReportTemplate();
             JasperReport jasperReport = compileReport(inputStream);
             HashMap<String, Object> jasperParameter = setReportParameters();
             JasperPrint jasperPrint = fillReport(jasperReport, jasperParameter);
@@ -43,10 +44,6 @@ public class ReportBuilder {
 
     private JasperReport compileReport(InputStream inputStream) throws JRException {
         return JasperCompileManager.compileReport(inputStream);
-    }
-
-    private InputStream getReportTemplate() {
-        return getClass().getResourceAsStream(ProductReportConstants.REPORT_XML);
     }
 
     private HashMap<String, Object> setReportParameters() {
