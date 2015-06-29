@@ -1,7 +1,5 @@
 package com.ace.creator;
 
-import com.ace.constants.DBConstants;
-import com.ace.constants.ProductReportConstants;
 import com.ace.generators.ReportGenerator;
 import com.ace.template.ReportTemplate;
 import com.ace.utils.ConnectionUtils;
@@ -31,7 +29,7 @@ public class ReportBuilder {
         try {
             InputStream inputStream = reportTemplate.getReportTemplate();
             JasperReport jasperReport = compileReport(inputStream);
-            HashMap<String, Object> jasperParameter = setReportParameters();
+            HashMap<String, Object> jasperParameter = reportTemplate.setReportParameters();
             JasperPrint jasperPrint = fillReport(jasperReport, jasperParameter);
             fileName = reportTemplate.getFileName() + reportGenerator.getFileExtension();
             reportGenerator.generateReport(jasperPrint, fileName);
@@ -52,11 +50,6 @@ public class ReportBuilder {
         return JasperCompileManager.compileReport(inputStream);
     }
 
-    private HashMap<String, Object> setReportParameters() {
-        HashMap<String, Object> jasperParameter = new HashMap<String, Object>();
-        jasperParameter.put(DBConstants.QUERY, ProductReportConstants.QUERY_VALUE);
-        jasperParameter.put(ProductReportConstants.REPORT_NAME, ProductReportConstants.REPORT_NAME_VALUE);
-        return jasperParameter;
-    }
+
 
 }
