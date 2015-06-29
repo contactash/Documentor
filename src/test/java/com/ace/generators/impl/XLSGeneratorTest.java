@@ -1,7 +1,7 @@
 package com.ace.generators.impl;
 
 import com.ace.constants.ProductReportConstants;
-import com.ace.constants.ReportConstants;
+import com.ace.constants.ReportTemplateConstants;
 import com.ace.generators.ReportGenerator;
 import com.ace.template.ReportTemplate;
 import com.ace.template.impl.ProductTemplate;
@@ -20,7 +20,7 @@ public class XLSGeneratorTest {
         ReportGenerator xlsGenerator = new XLSGenerator();
         ReportTemplate productTemplate = new ProductTemplate();
         String actualName = productTemplate.getFileName() + xlsGenerator.getFileExtension();
-        String expectedName = ProductReportConstants.FILE_NAME + ReportConstants.XLS_EXT;
+        String expectedName = ProductReportConstants.FILE_NAME + ReportTemplateConstants.XLS_EXT;
         assertThat(actualName, is(equalTo(expectedName)));
     }
 

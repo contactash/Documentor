@@ -1,6 +1,6 @@
 package com.ace.generators.impl;
 
-import com.ace.constants.ReportConstants;
+import com.ace.constants.ReportTemplateConstants;
 import com.ace.generators.ReportGenerator;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -17,7 +17,7 @@ public class PDFGenerator extends ReportGenerator {
 
     @Override
     public String getFileExtension() {
-        return  ReportConstants.PDF_EXT;
+        return  ReportTemplateConstants.PDF_EXT;
     }
 
 }
