@@ -1,6 +1,6 @@
 package com.ace.constants;
 
-public class ProductReportConstants {
+public class ProductTemplateConstants {
     public static final String REPORT_NAME_VALUE = "Product Report";
     public static final String PRODUCT_TEMPLATE_XML = "/products.xml";
     public static final String REPORT_NAME = "REPORT_NAME";

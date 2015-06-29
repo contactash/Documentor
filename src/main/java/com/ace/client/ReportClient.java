@@ -20,9 +20,9 @@ public class ReportClient {
         reportBuilder.setReportTemplate(new ProductTemplate());
         createReportAndOpenFile(reportBuilder);
 
-        reportBuilder.setReportGenerator(new HTMLGenerator());
-        reportBuilder.setReportTemplate(new ProductTemplate());
-        createReportAndOpenFile(reportBuilder);
+//        reportBuilder.setReportGenerator(new HTMLGenerator());
+//        reportBuilder.setReportTemplate(new ProductTemplate());
+//        createReportAndOpenFile(reportBuilder);
 	}
 
     private static void createReportAndOpenFile(ReportBuilder reportBuilder) {
