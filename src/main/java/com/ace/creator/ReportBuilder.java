@@ -3,6 +3,7 @@ package com.ace.creator;
 import com.ace.constants.DBConstants;
 import com.ace.constants.ProductReportConstants;
 import com.ace.generators.ReportGenerator;
+import com.ace.template.ReportTemplate;
 import com.ace.template.impl.ProductTemplate;
 import com.ace.utils.ConnectionUtils;
 import net.sf.jasperreports.engine.*;
@@ -13,11 +14,15 @@ import java.util.HashMap;
 
 public class ReportBuilder {
 
-    private final ProductTemplate productTemplate = new ProductTemplate();
+    ReportTemplate productTemplate;
     ReportGenerator reportGenerator;
 
     public void setReportGenerator(ReportGenerator reportGenerator) {
         this.reportGenerator = reportGenerator;
+    }
+
+    public void setProductTemplate(ReportTemplate productTemplate) {
+        this.productTemplate = productTemplate;
     }
 
     public String createReport() {
