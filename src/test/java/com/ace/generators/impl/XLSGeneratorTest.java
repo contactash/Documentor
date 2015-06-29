@@ -3,6 +3,8 @@ package com.ace.generators.impl;
 import com.ace.constants.ProductReportConstants;
 import com.ace.constants.ReportConstants;
 import com.ace.generators.ReportGenerator;
+import com.ace.template.ReportTemplate;
+import com.ace.template.impl.ProductTemplate;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -15,8 +17,9 @@ public class XLSGeneratorTest {
     @Ignore
     @Test
     public void testThatFileNameIsWithXlsExtension() throws Exception {
-        ReportGenerator generator = new XLSGenerator();
-        String actualName = generator.getFileName();
+        ReportGenerator xlsGenerator = new XLSGenerator();
+        ReportTemplate productTemplate = new ProductTemplate();
+        String actualName = productTemplate.getFileName() + xlsGenerator.getFileExtension();
         String expectedName = ProductReportConstants.FILE_NAME + ReportConstants.XLS_EXT;
         assertThat(actualName, is(equalTo(expectedName)));
     }

@@ -4,7 +4,6 @@ import com.ace.constants.DBConstants;
 import com.ace.constants.ProductReportConstants;
 import com.ace.generators.ReportGenerator;
 import com.ace.template.ReportTemplate;
-import com.ace.template.impl.ProductTemplate;
 import com.ace.utils.ConnectionUtils;
 import net.sf.jasperreports.engine.*;
 
@@ -14,15 +13,15 @@ import java.util.HashMap;
 
 public class ReportBuilder {
 
-    ReportTemplate productTemplate;
+    ReportTemplate reportTemplate;
     ReportGenerator reportGenerator;
 
     public void setReportGenerator(ReportGenerator reportGenerator) {
         this.reportGenerator = reportGenerator;
     }
 
-    public void setProductTemplate(ReportTemplate productTemplate) {
-        this.productTemplate = productTemplate;
+    public void setReportTemplate(ReportTemplate reportTemplate) {
+        this.reportTemplate = reportTemplate;
     }
 
     public String createReport() {
@@ -30,11 +29,12 @@ public class ReportBuilder {
         String fileName = "";
 
         try {
-            InputStream inputStream = productTemplate.getReportTemplate();
+            InputStream inputStream = reportTemplate.getReportTemplate();
             JasperReport jasperReport = compileReport(inputStream);
             HashMap<String, Object> jasperParameter = setReportParameters();
             JasperPrint jasperPrint = fillReport(jasperReport, jasperParameter);
-            fileName = reportGenerator.generateReport(jasperPrint);
+            fileName = reportTemplate.getFileName() + reportGenerator.getFileExtension();
+            reportGenerator.generateReport(jasperPrint, fileName);
 
         } catch (Exception e) {
             e.printStackTrace();

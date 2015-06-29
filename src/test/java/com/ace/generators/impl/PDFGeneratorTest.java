@@ -1,5 +1,7 @@
 package com.ace.generators.impl;
 
+import com.ace.template.ReportTemplate;
+import com.ace.template.impl.ProductTemplate;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -11,8 +13,9 @@ public class PDFGeneratorTest {
 
     @Test
     public void testThatFileNameIsWithPDFExtension() throws Exception {
-        PDFGenerator generator = new PDFGenerator();
-        String actualFileName = generator.getFileName();
+        PDFGenerator pdfGenerator = new PDFGenerator();
+        ReportTemplate productTemplate = new ProductTemplate();
+        String actualFileName = productTemplate.getFileName() + pdfGenerator.getFileExtension();
         String expectedFileName = "Product-Report.pdf";
         assertEquals(actualFileName, expectedFileName);
         assertThat(actualFileName, is(equalTo(expectedFileName)));

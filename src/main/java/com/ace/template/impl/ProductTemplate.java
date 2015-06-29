@@ -8,6 +8,10 @@ import java.io.InputStream;
 public class ProductTemplate implements ReportTemplate {
 
     public InputStream getReportTemplate() {
-        return getClass().getResourceAsStream(ProductReportConstants.REPORT_XML);
+        return getClass().getResourceAsStream(ProductReportConstants.PRODUCT_TEMPLATE_XML);
+    }
+
+    public String getFileName() {
+        return ProductReportConstants.FILE_NAME;
     }
 }

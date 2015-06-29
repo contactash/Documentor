@@ -1,6 +1,5 @@
 package com.ace.generators;
 
-import com.ace.constants.ProductReportConstants;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRExporter;
 import net.sf.jasperreports.engine.JRExporterParameter;
@@ -9,17 +8,15 @@ import net.sf.jasperreports.engine.JasperPrint;
 public abstract class ReportGenerator {
 
 
-    public abstract String generateReport(JasperPrint jasperPrint) throws JRException;
+    public abstract void generateReport(JasperPrint jasperPrint, String fileName) throws JRException;
+
+     public abstract String getFileExtension();
 
     public JRExporter getExporter(JasperPrint jasperPrint, String fileName, JRExporter exporter) {
         exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
         exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, fileName);
 
         return exporter;
-    }
-
-     public  String getFileName() {
-        return  ProductReportConstants.FILE_NAME;
     }
 
 }

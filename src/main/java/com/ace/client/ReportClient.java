@@ -13,15 +13,15 @@ public class ReportClient {
 
         ReportBuilder reportBuilder = new ReportBuilder();
         reportBuilder.setReportGenerator(new PDFGenerator());
-        reportBuilder.setProductTemplate(new ProductTemplate());
-
+        reportBuilder.setReportTemplate(new ProductTemplate());
         createReportAndOpenFile(reportBuilder);
+
         reportBuilder.setReportGenerator(new XLSGenerator());
-        reportBuilder.setProductTemplate(new ProductTemplate());
-
+        reportBuilder.setReportTemplate(new ProductTemplate());
         createReportAndOpenFile(reportBuilder);
+
         reportBuilder.setReportGenerator(new HTMLGenerator());
-        reportBuilder.setProductTemplate(new ProductTemplate());
+        reportBuilder.setReportTemplate(new ProductTemplate());
         createReportAndOpenFile(reportBuilder);
 	}
 
