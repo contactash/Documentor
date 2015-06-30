@@ -6,6 +6,7 @@ import com.ace.utils.ConnectionUtils;
 import net.sf.jasperreports.engine.*;
 
 import java.io.InputStream;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 
