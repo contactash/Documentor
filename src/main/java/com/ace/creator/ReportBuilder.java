@@ -1,12 +1,11 @@
 package com.ace.creator;
 
+import com.ace.connection.Connections;
 import com.ace.generators.ReportGenerator;
 import com.ace.template.ReportTemplate;
-import com.ace.utils.ConnectionUtils;
 import net.sf.jasperreports.engine.*;
 
 import java.io.InputStream;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 
@@ -14,13 +13,18 @@ public class ReportBuilder {
 
     ReportTemplate reportTemplate;
     ReportGenerator reportGenerator;
+    Connections connections;
+
+    public void setReportTemplate(ReportTemplate reportTemplate) {
+        this.reportTemplate = reportTemplate;
+    }
 
     public void setReportGenerator(ReportGenerator reportGenerator) {
         this.reportGenerator = reportGenerator;
     }
 
-    public void setReportTemplate(ReportTemplate reportTemplate) {
-        this.reportTemplate = reportTemplate;
+    public void setConnections(Connections connections) {
+        this.connections = connections;
     }
 
     public String createReport() {
@@ -44,7 +48,7 @@ public class ReportBuilder {
 
     private JasperPrint fillReport(JasperReport jasperReport, HashMap<String, Object> jasperParameter) throws JRException, ClassNotFoundException, SQLException {
         return JasperFillManager.fillReport(jasperReport,
-                jasperParameter, ConnectionUtils.getConnection());
+                jasperParameter, connections.getConnection());
     }
 
     private JasperReport compileReport(InputStream inputStream) throws JRException {

@@ -2,7 +2,6 @@ package com.ace.template.impl;
 
 import com.ace.constants.DBConstants;
 import com.ace.constants.EmployeeTemplateConstants;
-import com.ace.constants.ProductTemplateConstants;
 import com.ace.template.ReportTemplate;
 
 import java.io.InputStream;

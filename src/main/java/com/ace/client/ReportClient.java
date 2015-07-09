@@ -1,10 +1,8 @@
 package com.ace.client;
 
-import com.ace.generators.impl.HTMLGenerator;
-import com.ace.generators.impl.PDFGenerator;
+import com.ace.connection.impl.MySQLConnection;
 import com.ace.creator.ReportBuilder;
-import com.ace.generators.impl.XLSGenerator;
-import com.ace.template.impl.EmployeeTemplate;
+import com.ace.generators.impl.PDFGenerator;
 import com.ace.template.impl.ProductTemplate;
 import com.ace.utils.FileUtils;
 
@@ -15,10 +13,11 @@ public class ReportClient {
         ReportBuilder reportBuilder = new ReportBuilder();
         reportBuilder.setReportGenerator(new PDFGenerator());
         reportBuilder.setReportTemplate(new ProductTemplate());
+        reportBuilder.setConnections(new MySQLConnection());
         createReportAndOpenFile(reportBuilder);
 
-        reportBuilder.setReportTemplate(new EmployeeTemplate());
-        createReportAndOpenFile(reportBuilder);
+//        reportBuilder.setReportTemplate(new EmployeeTemplate());
+//        createReportAndOpenFile(reportBuilder);
 
 //        reportBuilder.setReportGenerator(new XLSGenerator());
 //        reportBuilder.setReportTemplate(new ProductTemplate());

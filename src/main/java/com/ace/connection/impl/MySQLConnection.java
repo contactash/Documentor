@@ -1,14 +1,15 @@
-package com.ace.utils;
+package com.ace.connection.impl;
 
+import com.ace.connection.Connections;
 import com.ace.constants.DBConstants;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionUtils {
+public class MySQLConnection implements Connections {
 
-    public static Connection getConnection() throws ClassNotFoundException, SQLException {
+    public Connection getConnection() throws ClassNotFoundException, SQLException {
 
         Class.forName(DBConstants.DB_DRIVER);
         return DriverManager.getConnection(DBConstants.DB_URL, DBConstants.USER, DBConstants.PASSWORD);
