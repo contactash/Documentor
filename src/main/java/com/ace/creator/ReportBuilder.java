@@ -11,16 +11,26 @@ import java.util.HashMap;
 
 public class ReportBuilder {
 
-    ReportTemplate reportTemplate;
-    ReportGenerator reportGenerator;
-    Connections connections;
+    private ReportTemplate reportTemplate;
+    private ReportGenerator reportGenerator;
+    private Connections connections;
+
+//    public ReportBuilder(ReportGenerator reportGenerator) {
+//        if(reportGenerator == null) {
+//            throw new IllegalArgumentException("Report Generator cannot be null");
+//        }
+//        this.reportGenerator = reportGenerator;
+//    }
+
+    public void setReportGenerator(ReportGenerator reportGenerator) {
+        if (reportGenerator == null) {
+            throw new IllegalArgumentException("Report Generator cannot be null ");
+        }
+        this.reportGenerator = reportGenerator;
+    }
 
     public void setReportTemplate(ReportTemplate reportTemplate) {
         this.reportTemplate = reportTemplate;
-    }
-
-    public void setReportGenerator(ReportGenerator reportGenerator) {
-        this.reportGenerator = reportGenerator;
     }
 
     public void setConnections(Connections connections) {
@@ -43,7 +53,6 @@ public class ReportBuilder {
             e.printStackTrace();
         }
         return fileName;
-
     }
 
     private JasperPrint fillReport(JasperReport jasperReport, HashMap<String, Object> jasperParameter) throws JRException, ClassNotFoundException, SQLException {
@@ -54,7 +63,4 @@ public class ReportBuilder {
     private JasperReport compileReport(InputStream inputStream) throws JRException {
         return JasperCompileManager.compileReport(inputStream);
     }
-
-
-
 }

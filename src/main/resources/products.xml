@@ -3,6 +3,7 @@
     <property name="ireport.zoom" value="1.0"/>
     <property name="ireport.x" value="0"/>
     <property name="ireport.y" value="0"/>
+    <property name="ireport.background.image.properties" value="true,true,0.25,-8,-8,0,0,504,119"/>
     <style name="table">
         <box>
             <pen lineWidth="1.0" lineColor="#000000"/>
@@ -81,17 +82,21 @@
         <band splitType="Stretch"/>
     </background>
     <title>
-        <band height="79" splitType="Stretch"/>
+        <band height="19" splitType="Stretch"/>
     </title>
     <pageHeader>
-        <band height="35" splitType="Stretch">
+        <band height="72" splitType="Stretch">
             <textField>
-                <reportElement x="218" y="0" width="100" height="35" uuid="c397e4fc-8076-421d-9fea-0f7144b5fb28"/>
+                <reportElement x="252" y="0" width="203" height="54" uuid="c397e4fc-8076-421d-9fea-0f7144b5fb28"/>
                 <textElement>
-                    <font size="12" isBold="true"/>
+                    <font size="16" isBold="true"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$P{REPORT_NAME}]]></textFieldExpression>
             </textField>
+            <image>
+                <reportElement x="0" y="0" width="161" height="35" uuid="5206a3c6-8fef-414d-91a6-7fd44e040300"/>
+                <imageExpression><![CDATA["pluralsight logo.jpeg"]]></imageExpression>
+            </image>
         </band>
     </pageHeader>
     <detail>

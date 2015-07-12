@@ -10,3 +10,8 @@ mvn clean install
 
 to run the project
 java -jar target/PdfCreator-1.0-SNAPSHOT-jar-with-dependencies.jar 
+
+mysql -u ash -p classicmodels < mysqlsampledatabases.sql
+
+
+}
