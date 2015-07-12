@@ -15,16 +15,9 @@ public class ReportBuilder {
     private ReportGenerator reportGenerator;
     private Connections connections;
 
-//    public ReportBuilder(ReportGenerator reportGenerator) {
-//        if(reportGenerator == null) {
-//            throw new IllegalArgumentException("Report Generator cannot be null");
-//        }
-//        this.reportGenerator = reportGenerator;
-//    }
-
-    public void setReportGenerator(ReportGenerator reportGenerator) {
-        if (reportGenerator == null) {
-            throw new IllegalArgumentException("Report Generator cannot be null ");
+    public ReportBuilder(ReportGenerator reportGenerator) {
+        if(reportGenerator == null) {
+            throw new IllegalArgumentException("Report Generator cannot be null");
         }
         this.reportGenerator = reportGenerator;
     }

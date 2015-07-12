@@ -9,9 +9,8 @@ public class ReportClient {
 
 	public static void main(String args[]) {
 
-        ReportBuilder reportBuilder = new ReportBuilder();
+        ReportBuilder reportBuilder = new ReportBuilder(null);
         reportBuilder.setReportTemplate(new ProductTemplate());
-        reportBuilder.setReportGenerator(null);
         reportBuilder.setConnections(new MySQLConnection());
         createReportAndOpenFile(reportBuilder);
 

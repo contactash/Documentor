@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5b9521f-840a-49a4-a3d2-8ab3ddfe8e41" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/pluralsight logo.jpeg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ace/constants/ProductTemplateConstants.java" afterPath="$PROJECT_DIR$/src/main/java/com/ace/constants/ProductTemplateConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ace/creator/ReportBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/ace/creator/ReportBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ace/client/ReportClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/ace/client/ReportClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/products.xml" afterPath="$PROJECT_DIR$/src/main/resources/products.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PdfCreator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -122,24 +117,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportBuilder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReportBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ace/creator/ReportBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6905537">
-              <caret line="26" column="83" selection-start-line="26" selection-start-column="83" selection-end-line="26" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
               <folding>
-                <element signature="e#1009#1010#0" expanded="true" />
-                <element signature="e#1061#1062#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportClient.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReportClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ace/client/ReportClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.247557">
+              <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -151,7 +146,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.71875">
+            <state vertical-scroll-proportion="-4.4375">
               <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="56" />
               <folding />
             </state>
@@ -236,8 +231,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/products.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ace/constants/ProductTemplateConstants.java" />
         <option value="$USER_HOME$/Demo/js/PureFunctiions.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ace/client/ReportClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ace/creator/ReportBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ace/client/ReportClient.java" />
       </list>
     </option>
   </component>
@@ -1235,7 +1230,7 @@
       <workItem from="1436453890600" duration="595000" />
       <workItem from="1436594088667" duration="417000" />
       <workItem from="1436653813860" duration="1454000" />
-      <workItem from="1436657018931" duration="3242000" />
+      <workItem from="1436657018931" duration="3411000" />
     </task>
     <task id="LOCAL-00001" summary="check in file from intellij">
       <created>1431857915569</created>
@@ -1313,7 +1308,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81408000" />
+    <option name="totallyTimeSpent" value="81577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="711" extended-state="6" />
@@ -1551,13 +1546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/com.ace.template.ReportTemplate">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1617,13 +1605,6 @@
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PdfCreator.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07313997">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1821,12 +1802,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PdfCreator.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06688963">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2541806">
+          <caret line="4" column="80" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ace/creator/ReportBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.71875">
+        <state vertical-scroll-proportion="-4.4375">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="56" />
           <folding />
         </state>
@@ -1834,20 +1842,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ace/client/ReportClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.247557">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ace/creator/ReportBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6905537">
-          <caret line="26" column="83" selection-start-line="26" selection-start-column="83" selection-end-line="26" selection-end-column="83" />
-          <folding>
-            <element signature="e#1009#1010#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
