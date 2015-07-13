@@ -12,7 +12,21 @@ public class MySQLConnection implements Connections {
     public Connection getConnection() throws ClassNotFoundException, SQLException {
 
         Class.forName(DBConstants.DB_DRIVER);
-        return DriverManager.getConnection(DBConstants.DB_URL, DBConstants.USER, DBConstants.PASSWORD);
+        Connection conn = DriverManager.getConnection(DBConstants.DB_URL, DBConstants.USER, DBConstants.PASSWORD);
+
+        return conn;
 
     }
+
+    public void closeConnection(Connection conn) {
+        try {
+            if (conn != null) {
+                conn.close();
+                conn = null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

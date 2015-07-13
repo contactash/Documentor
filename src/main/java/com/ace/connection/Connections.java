@@ -7,4 +7,6 @@ public interface Connections {
 
     Connection getConnection() throws ClassNotFoundException, SQLException;
 
+    public void closeConnection(Connection conn);
+
 }

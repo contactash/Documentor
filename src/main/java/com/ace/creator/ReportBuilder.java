@@ -6,6 +6,7 @@ import com.ace.template.ReportTemplate;
 import net.sf.jasperreports.engine.*;
 
 import java.io.InputStream;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 
@@ -33,24 +34,27 @@ public class ReportBuilder {
     public String createReport() {
 
         String fileName = "";
+        Connection connection = null;
 
         try {
             InputStream inputStream = reportTemplate.getReportTemplate();
             JasperReport jasperReport = compileReport(inputStream);
             HashMap<String, Object> jasperParameter = reportTemplate.setReportParameters();
-            JasperPrint jasperPrint = fillReport(jasperReport, jasperParameter);
+            connection = connections.getConnection();
+            JasperPrint jasperPrint = fillReport(jasperReport, jasperParameter, connection);
             fileName = reportTemplate.getFileName() + reportGenerator.getFileExtension();
             reportGenerator.generateReport(jasperPrint, fileName);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        connections.closeConnection(connection);
         return fileName;
     }
 
-    private JasperPrint fillReport(JasperReport jasperReport, HashMap<String, Object> jasperParameter) throws JRException, ClassNotFoundException, SQLException {
+    private JasperPrint fillReport(JasperReport jasperReport, HashMap<String, Object> jasperParameter, Connection connection) throws JRException, ClassNotFoundException, SQLException {
         return JasperFillManager.fillReport(jasperReport,
-                jasperParameter, connections.getConnection());
+                jasperParameter, connection);
     }
 
     private JasperReport compileReport(InputStream inputStream) throws JRException {
