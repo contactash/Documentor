@@ -3,10 +3,12 @@ package com.ace.template.impl;
 import com.ace.constants.DBConstants;
 import com.ace.constants.EmployeeTemplateConstants;
 import com.ace.template.ReportTemplate;
+import com.google.inject.Singleton;
 
 import java.io.InputStream;
 import java.util.HashMap;
 
+@Singleton
 public class EmployeeTemplate implements ReportTemplate {
 
     public InputStream getReportTemplate() {

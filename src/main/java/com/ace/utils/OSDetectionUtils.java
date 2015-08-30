@@ -1,6 +1,6 @@
 package com.ace.utils;
 
-public class OSDetectionUtils
+class OSDetectionUtils
 {
     private static boolean isWindows = false;
     private static boolean isLinux = false;
@@ -16,6 +16,6 @@ public class OSDetectionUtils
 
     public static boolean isWindows() { return isWindows; }
     public static boolean isLinux() { return isLinux; }
-    public static boolean isMac() { return isMac; };
+    public static boolean isMac() { return isMac; }
 
 }

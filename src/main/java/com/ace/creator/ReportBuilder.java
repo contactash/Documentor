@@ -3,6 +3,7 @@ package com.ace.creator;
 import com.ace.connection.Connections;
 import com.ace.generators.ReportGenerator;
 import com.ace.template.ReportTemplate;
+import com.google.inject.Inject;
 import net.sf.jasperreports.engine.*;
 
 import java.io.InputStream;
@@ -16,6 +17,7 @@ public class ReportBuilder {
     private ReportGenerator reportGenerator;
     private Connections connections;
 
+    @Inject
     public ReportBuilder(ReportGenerator reportGenerator) {
         if(reportGenerator == null) {
             throw new IllegalArgumentException("Report Generator cannot be null");
@@ -23,10 +25,12 @@ public class ReportBuilder {
         this.reportGenerator = reportGenerator;
     }
 
+    @Inject
     public void setReportTemplate(ReportTemplate reportTemplate) {
         this.reportTemplate = reportTemplate;
     }
 
+    @Inject
     public void setConnections(Connections connections) {
         this.connections = connections;
     }
@@ -47,8 +51,9 @@ public class ReportBuilder {
 
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            connections.closeConnection(connection);
         }
-        connections.closeConnection(connection);
         return fileName;
     }
 
