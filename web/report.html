@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 </head>
 <body>
 <!--<a href="ReportServlet">Click here to send GET request</a>-->
@@ -12,11 +13,11 @@
 <div class="container">
     <h2>Report Generator Tool</h2>
     <p>Select the report format and report type that you want to generate</p>
-<form action="ReportServlet" method="post" role="form">
+<form action="ReportServlet" method="post" role="form" class="form-inline">
     <div class="form-group">
         <label>
             Select Report Format :
-            <select name="reportFormat">
+            <select  class="selectpicker" name="reportFormat">
                 <option value="pdf" selected>PDF</option>
                 <option value="xls">EXCEL</option>
                 <option value="html">HTML</option>
@@ -26,7 +27,7 @@
     <div class="form-group">
         <label>
             Select Report Type :
-            <select name="reportType">
+            <select  class="selectpicker" name="reportType">
                 <option value="emp" selected>Employee</option>
                 <option value="prod">Product</option>
             </select>
@@ -38,5 +39,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 </body>
 </html>
