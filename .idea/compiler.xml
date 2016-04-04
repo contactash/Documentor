@@ -28,7 +28,8 @@
     <bytecodeTargetLevel target="1.8">
       <module name="Demo" target="1.5" />
       <module name="DocApp" target="1.5" />
-      <module name="PdfCreator" target="1.5" />
+      <module name="PdfCreator" target="1.7" />
+      <module name="PDFCreatorWeb" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!--<a href="ReportServlet">Click here to send GET request</a>-->
+
+<br/><br/>
+<div class="container">
+    <h2>Report Generator Tool</h2>
+    <p>Select the report format and report type that you want to generate</p>
+<form action="ReportServlet" method="post" role="form">
+    <div class="form-group">
+        <label>
+            Select Report Format :
+            <select name="reportFormat">
+                <option value="pdf" selected>PDF</option>
+                <option value="xls">EXCEL</option>
+                <option value="html">HTML</option>
+            </select>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Select Report Type :
+            <select name="reportType">
+                <option value="emp" selected>Employee</option>
+                <option value="prod">Product</option>
+            </select>
+        </label>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Generate Report" />
+</form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
