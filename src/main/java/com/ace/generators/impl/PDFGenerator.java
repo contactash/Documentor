@@ -4,6 +4,7 @@ import com.ace.constants.ReportConstants;
 import com.ace.generators.ReportGenerator;
 import com.google.inject.Singleton;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRExporter;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.export.JRPdfExporter;
 
@@ -20,6 +21,11 @@ public class PDFGenerator extends ReportGenerator {
     @Override
     public String getFileExtension() {
         return  ReportConstants.PDF_EXT;
+    }
+
+    @Override
+    public JRExporter getExporterType() {
+        return new JRPdfExporter();
     }
 
 }

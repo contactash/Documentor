@@ -7,18 +7,21 @@ import com.ace.generators.impl.PDFGenerator;
 import com.ace.generators.impl.XLSGenerator;
 import com.ace.template.impl.EmployeeTemplate;
 import com.ace.template.impl.ProductTemplate;
-import com.ace.utils.FileUtils;
 
 class ReportWebClient {
 
-    void buildReport(String reportFormat, String reportType) {
+
+    ReportBuilder buildReport(String reportFormat, String reportType)  {
         ReportBuilder reportBuilder = new ReportBuilder(new PDFGenerator());
+        reportBuilder.setContentType("application/pdf");
         switch (reportFormat) {
             case "xls" :
                 reportBuilder = new ReportBuilder(new XLSGenerator());
+                reportBuilder.setContentType("application/vnd.ms-excel");
                 break;
             case "html" :
                 reportBuilder = new ReportBuilder(new HTMLGenerator());
+                reportBuilder.setContentType("application/html");
                 break;
         }
 
@@ -35,11 +38,7 @@ class ReportWebClient {
 
         reportBuilder.setConnections(new MySQLConnection());
 
-        createReportAndOpenFile(reportBuilder);
+        return  reportBuilder;
     }
 
-    private static void createReportAndOpenFile(ReportBuilder reportBuilder) {
-        String fileName = reportBuilder.createReport();
-        FileUtils.openFile(fileName);
-    }
 }

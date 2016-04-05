@@ -1,12 +1,14 @@
 package com.ace.client;
 
+import com.ace.connection.impl.MySQLConnection;
 import com.ace.creator.ReportBuilder;
 import com.ace.template.impl.EmployeeTemplate;
+import com.ace.template.impl.ProductTemplate;
 import com.ace.utils.FileUtils;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-public class ReportClient {
+public class ReportApplicationClient {
 
 	public static void main(String args[]) {
 
@@ -16,8 +18,8 @@ public class ReportClient {
         createReportAndOpenFile(reportBuilder);
 
 //        ReportBuilder reportBuilder = new ReportBuilder(new PDFGenerator());
-//        reportBuilder.setReportTemplate(new ProductTemplate());
-//        reportBuilder.setConnections(new MySQLConnection());
+        reportBuilder.setReportTemplate(new ProductTemplate());
+        reportBuilder.setConnections(new MySQLConnection());
 
 //        reportBuilder.setReportGenerator(new XLSGenerator());
         reportBuilder.setReportTemplate(new EmployeeTemplate());
