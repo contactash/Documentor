@@ -15,4 +15,5 @@ public class MySQLConnectionUtilsTest {
         Connection connection = (Connection) connections.getConnection();
         assertNotNull(connection);
     }
+
 }

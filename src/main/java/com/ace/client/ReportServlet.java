@@ -41,18 +41,26 @@ public class ReportServlet extends HttpServlet {
         ReportBuilder reportBuilder = reportWebClient.buildReport(reportFormat, reportType);
 
         if(openInBrowser != null) {
-            ByteArrayOutputStream reportStream = reportBuilder.getByteArrayOutputStream();
-            response.setContentLength(reportStream.size());
-            response.setContentType(reportBuilder.getContentType());
-            ServletOutputStream servletOutputStream = response.getOutputStream();
-            reportStream.writeTo(servletOutputStream);
-            servletOutputStream.flush();
+            openInBrowser(response, reportBuilder);
         } else {
-            String fileName = reportBuilder.createReport();
-            FileUtils.openFile(fileName);
+            openInApplication(reportBuilder);
         }
 
         request.getRequestDispatcher("/index.jsp").forward(request, response);
+    }
+
+    private void openInApplication(ReportBuilder reportBuilder) {
+        String fileName = reportBuilder.createReport();
+        FileUtils.openFile(fileName);
+    }
+
+    private void openInBrowser(HttpServletResponse response, ReportBuilder reportBuilder) throws IOException {
+        ByteArrayOutputStream reportStream = reportBuilder.getByteArrayOutputStream();
+        response.setContentLength(reportStream.size());
+        response.setContentType(reportBuilder.getContentType());
+        ServletOutputStream servletOutputStream = response.getOutputStream();
+        reportStream.writeTo(servletOutputStream);
+        servletOutputStream.flush();
     }
 
 

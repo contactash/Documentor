@@ -8,7 +8,7 @@ import com.ace.template.ReportTemplate;
 import com.ace.template.impl.EmployeeTemplate;
 import com.google.inject.AbstractModule;
 
-public class ReportModule extends AbstractModule {
+class ReportModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(ReportGenerator.class)
