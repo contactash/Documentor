@@ -18,16 +18,11 @@ public class MySQLConnection implements Connections {
 
     public void closeConnection(Connection conn) {
         try {
-            System.out.println("gotya"+ conn);
             if (conn != null) {
                 conn.close();
-                System.out.println("shendi"+ conn);
-                conn = null;
             }
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            conn = null;
         }
     }
 

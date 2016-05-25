@@ -14,7 +14,7 @@ public abstract class ReportGenerator {
 
     public abstract JRExporter getExporterType();
 
-    public JRExporter getExporter(JasperPrint jasperPrint, String fileName, JRExporter exporter) {
+    protected JRExporter getExporter(JasperPrint jasperPrint, String fileName, JRExporter exporter) {
         exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
         exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, fileName);
 
