@@ -14,8 +14,8 @@ class OSDetectionUtils
         isMac = os.contains("mac");
     }
 
-    public static boolean isWindows() { return isWindows; }
-    public static boolean isLinux() { return isLinux; }
-    public static boolean isMac() { return isMac; }
+    static boolean isWindows() { return isWindows; }
+    static boolean isLinux() { return isLinux; }
+    static boolean isMac() { return isMac; }
 
 }
