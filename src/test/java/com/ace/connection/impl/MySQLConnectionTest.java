@@ -20,13 +20,12 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MySQLConnectionTest {
-    private Connections mysqlConnection;
+    private Connections mysqlConnection = new MySQLConnection();
     @Mock Connection mockConnection;
 
     @Before
     public void setUp() {
         //setup
-        mysqlConnection = new MySQLConnection();
         MockitoAnnotations.initMocks(this);
     }
 
@@ -41,8 +40,8 @@ public class MySQLConnectionTest {
 
     @Test
     public void shouldCloseConnection() throws Exception {
-        mysqlConnection.closeConnection(mysqlConnection.getConnection());
-        verify(mockConnection, times(1));
+        mysqlConnection.closeConnection(mockConnection);
+        verify(mockConnection, times(1)).close();
     }
 
     @After
