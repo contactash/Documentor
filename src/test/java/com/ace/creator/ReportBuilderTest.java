@@ -5,6 +5,7 @@ import com.ace.generators.ReportGenerator;
 import com.ace.template.ReportTemplate;
 import com.mysql.jdbc.Connection;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,9 +16,11 @@ import org.mockito.MockitoAnnotations;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Matchers.eq;
@@ -37,6 +40,8 @@ public class ReportBuilderTest {
     @Mock private JasperReport mockJasperReport;
     @Mock private Connection mockConnection;
     @Mock private HashMap<String, Object> mockJasperParameters;
+    @Mock private ByteArrayOutputStream mockByteArrayOutputStream;
+    @Mock private JRPdfExporter mockPdfExporter;
     private ReportBuilder reportBuilder;
 
 
@@ -50,6 +55,7 @@ public class ReportBuilderTest {
 
         Mockito.when(mockReportTemplate.getFileName()).thenReturn("Product-Report");
         Mockito.when(mockReportGenerator.getFileExtension()).thenReturn(".pdf");
+        Mockito.when(mockReportGenerator.getExporterType()).thenReturn(mockPdfExporter);
 
         // Add static mocking here
         mockStatic(JasperCompileManager.class);
@@ -65,6 +71,7 @@ public class ReportBuilderTest {
         String actualResult = reportBuilder.createReport();
         //verification
         verify(mockReportTemplate, times(1)).getReportTemplate();
+        verify(mockReportTemplate, times(1)).setReportParameters();
         verify(mockConnections, times(1)).getConnection();
         verify(mockConnections, times(1)).closeConnection(null);
         assertThat(actualResult, is("Product-Report.pdf"));
@@ -72,7 +79,14 @@ public class ReportBuilderTest {
 
     @Test
     public void getByteArrayOutputStream() throws Exception {
+        ByteArrayOutputStream actualResult = reportBuilder.getByteArrayOutputStream();
+        verify(mockPdfExporter, times(1)).exportReport();
+        assertThat(actualResult, is(instanceOf(ByteArrayOutputStream.class)));
+    }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowIllegalArgumentException() {
+        new ReportBuilder(null);
     }
 
 }
