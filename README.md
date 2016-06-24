@@ -13,3 +13,8 @@ to run the project
 java -jar target/PdfCreator-1.0-SNAPSHOT-jar-with-dependencies.jar 
 
 mysql -u ash -p classicmodels < mysqlsampledatabases.sql
+
+
+-- In order to create the war file run the following command
+ mvn compile war:war
+
