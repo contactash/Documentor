@@ -6,10 +6,20 @@
 
     <groupId>com.ace</groupId>
     <artifactId>PdfCreator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1</version>
+    <packaging>war</packaging>
+    <name>Documented Project</name>
+    <url>http://localhost:8080/PDFCreator</url>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webXml>web/WEB-INF/web.xml</webXml>
+                </configuration>
+            </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
