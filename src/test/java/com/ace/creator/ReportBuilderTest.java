@@ -9,10 +9,7 @@ import net.sf.jasperreports.engine.export.JRPdfExporter;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+import org.mockito.*;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
@@ -22,12 +19,11 @@ import java.util.HashMap;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.powermock.api.mockito.PowerMockito.mockStatic;
-import static org.powermock.api.mockito.PowerMockito.when;
+import static org.powermock.api.mockito.PowerMockito.*;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(value={JasperCompileManager.class, JasperFillManager.class})
@@ -75,6 +71,25 @@ public class ReportBuilderTest {
         verify(mockConnections, times(1)).getConnection();
         verify(mockConnections, times(1)).closeConnection(null);
         assertThat(actualResult, is("Product-Report.pdf"));
+        verifyStatic();
+
+        ArgumentCaptor<InputStream> inputStreamArgumentCaptor = ArgumentCaptor.forClass(InputStream.class);
+        JasperCompileManager.compileReport(inputStreamArgumentCaptor.capture());
+
+//        InputStream inputStream = inputStreamArgumentCaptor.getValue();
+//        assertThat(inputStream, is(notNull()));
+
+        ArgumentCaptor<JasperReport> jasperReportArgumentCaptor = ArgumentCaptor.forClass(JasperReport.class);
+        ArgumentCaptor<HashMap> jasperParameterArgumentCaptor = ArgumentCaptor.forClass(HashMap.class);
+        ArgumentCaptor<Connection> connectionArgumentCaptor = ArgumentCaptor.forClass(Connection.class);
+
+        JasperFillManager.fillReport(jasperReportArgumentCaptor.capture(), jasperParameterArgumentCaptor.capture(), connectionArgumentCaptor.capture());
+
+//        JasperReport jasperReport = jasperReportArgumentCaptor.getValue();
+//        assertThat(jasperReport, is(notNull()));
+
+//         HashMap jasperParameter = jasperParameterArgumentCaptor.getValue();
+//        assertThat(jasperParameter, is(notNull()));        r
     }
 
     @Test
