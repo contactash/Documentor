@@ -16,5 +16,5 @@ mysql -u ash -p classicmodels < mysqlsampledatabases.sql
 
 
 -- In order to create the war file run the following command
- mvn compile war:war
+- mvn compile war:war
 
