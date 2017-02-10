@@ -16,4 +16,4 @@ to run the project as standalone jar
 
 -- In order to create the war file run the following command
 - mvn compile war:war
-
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
