@@ -93,10 +93,6 @@
                 </textElement>
                 <textFieldExpression><![CDATA[$P{REPORT_NAME}]]></textFieldExpression>
             </textField>
-            <image>
-                <reportElement x="0" y="0" width="161" height="35" uuid="5206a3c6-8fef-414d-91a6-7fd44e040300"/>
-                <imageExpression><![CDATA["pluralsight logo.jpeg"]]></imageExpression>
-            </image>
         </band>
     </pageHeader>
     <detail>

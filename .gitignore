@@ -5,3 +5,8 @@ target
 classes
 .pdf
 .xls
+out/
+Employees-Report.pdf
+Product-Report.html
+Product-Report.html_files/
+Product-Report.pdf

@@ -5,7 +5,7 @@ import com.ace.connection.impl.MySQLConnection;
 import com.ace.generators.ReportGenerator;
 import com.ace.generators.impl.PDFGenerator;
 import com.ace.template.ReportTemplate;
-import com.ace.template.impl.EmployeeTemplate;
+import com.ace.template.impl.ProductTemplate;
 import com.google.inject.AbstractModule;
 
 class ReportModule extends AbstractModule {
@@ -18,6 +18,6 @@ class ReportModule extends AbstractModule {
                 .to(MySQLConnection.class);
 
         bind(ReportTemplate.class)
-                .to(EmployeeTemplate.class);
+                .to(ProductTemplate.class);
     }
 }

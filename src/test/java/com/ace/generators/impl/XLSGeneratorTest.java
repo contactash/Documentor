@@ -23,5 +23,4 @@ public class XLSGeneratorTest {
         String expectedName = ProductTemplateConstants.FILE_NAME + ReportConstants.XLS_EXT;
         assertThat(actualName, is(equalTo(expectedName)));
     }
-
 }
